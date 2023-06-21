@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package br.com.gerencimentoEstoque.Local;
+package br.com.gerencimentoEstoque.Cliente;
 import br.com.gerencimentoEstoque.arch.controller.AbstractBasicController;
 import java.net.URI;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,17 +16,17 @@ import org.springframework.web.util.UriComponentsBuilder;
  */
 @RestController
 @RequestMapping("/api/local")
-public class LocalController extends AbstractBasicController<Local, LocalDto, LocalForm, LocalRepository, LocalService, Long> {
+public class ClienteController extends AbstractBasicController<Cliente, ClienteDto, ClienteForm, ClienteRepository, ClienteService, Long> {
 
     @Autowired
     @Override
-    public void setService(LocalService service) {
+    public void setService(ClienteService service) {
         this.service = service;
-        setMapper(LocalMapper.INSTANCE);
+        setMapper(ClienteMapper.INSTANCE);
     }
 
     @Override
-    public URI createUri(Local entity, UriComponentsBuilder uriBuilder) {
+    public URI createUri(Cliente entity, UriComponentsBuilder uriBuilder) {
         return uriBuilder.path("/local/{id}")
                 .buildAndExpand(entity.getId())
                 .toUri();
