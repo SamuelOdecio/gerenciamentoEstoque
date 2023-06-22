@@ -4,10 +4,12 @@
  */
 package br.com.gerencimentoEstoque.Cliente;
 
+import br.com.gerencimentoEstoque.Venda.Venda;
 import br.com.gerencimentoEstoque.arch.BaseObject;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.SequenceGenerator;
+import java.util.List;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -32,5 +34,6 @@ public class Cliente extends BaseObject {
     private String cpf;
     private String telefone;
     private String endereco;
+    private List <Venda> debitos;
 
 }
