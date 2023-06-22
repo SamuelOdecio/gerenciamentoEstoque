@@ -4,7 +4,6 @@
  */
 package br.com.gerencimentoEstoque.Cliente;
 
-import br.com.gerencimentoEstoque.Produto.Produto;
 import br.com.gerencimentoEstoque.arch.BaseObject;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
