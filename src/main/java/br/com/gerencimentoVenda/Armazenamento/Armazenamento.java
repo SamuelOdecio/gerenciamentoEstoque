@@ -44,7 +44,7 @@ public class Armazenamento extends BaseObject {
             fetch = FetchType.LAZY,
             cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST},
             orphanRemoval = true)
-    private List<Produto> idProdutos;
+    private List<Produto> Produtos;
     @Column(columnDefinition = "Integer not null")
     private int qtdeProduto;
 

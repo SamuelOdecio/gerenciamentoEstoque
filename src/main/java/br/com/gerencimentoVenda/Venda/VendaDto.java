@@ -4,7 +4,6 @@
  */
 package br.com.gerencimentoVenda.Venda;
 
-import br.com.gerencimentoVenda.Cliente.Cliente;
 import br.com.gerencimentoVenda.Cliente.ClienteDto;
 import br.com.gerencimentoVenda.arch.dto.AdapterBaseObjectDto;
 import lombok.AllArgsConstructor;

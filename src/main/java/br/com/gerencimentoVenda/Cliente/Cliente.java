@@ -7,6 +7,7 @@ package br.com.gerencimentoVenda.Cliente;
 import br.com.gerencimentoVenda.arch.BaseObject;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.SequenceGenerator;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -22,17 +23,19 @@ import lombok.experimental.SuperBuilder;
 @SuperBuilder
 @AllArgsConstructor
 @NoArgsConstructor
-@EqualsAndHashCode(callSuper = true)
+@EqualsAndHashCode
 @Entity
 @SequenceGenerator(sequenceName = "Cliente_sequence", name = "baseObjectSequence", allocationSize = 1)
-public class Cliente extends BaseObject {
-   
+public class Cliente {
+//comentar erro do mapper com nicolas
+    @Column(columnDefinition = "varchar(255) not null", name = "nome")
+    private String nome;
+    @OneToMany
     @Column(columnDefinition = "varchar(255) not null", name = "CPF")
     private String cpf;
     @Column(columnDefinition = "varchar(255) not null")
     private String telefone;
     @Column(columnDefinition = "varchar(255) not null")
     private String endereco;
-    
 
 }
