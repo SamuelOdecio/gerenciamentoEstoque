@@ -4,7 +4,7 @@
  */
 package br.com.gerencimentoVenda.Venda;
 
-import br.com.gerencimentoVenda.Cliente.Cliente;
+import br.com.gerencimentoVenda.Cliente.ClienteDto;
 import br.com.gerencimentoVenda.arch.dto.AdapterBaseObjectForm;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
@@ -15,13 +15,12 @@ import lombok.experimental.SuperBuilder;
  *
  * @author suldine
  */
-
 @SuperBuilder
 @AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper = true)
 public class VendaForm extends AdapterBaseObjectForm {
 
-    private Cliente cliente;
-    private Double valorFinal;
+    private ClienteDto cliente;
+    private Double valor;
 }

@@ -5,11 +5,11 @@
 package br.com.gerencimentoVenda.Local;
 
 import br.com.gerencimentoVenda.Armazenamento.Armazenamento;
-import br.com.gerencimentoVenda.Produto.Produto;
 import br.com.gerencimentoVenda.arch.BaseObject;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.ManyToMany;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.SequenceGenerator;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -30,10 +30,13 @@ import lombok.experimental.SuperBuilder;
 @SequenceGenerator(sequenceName = "Local_sequence", name = "baseObjectSequence", allocationSize = 1)
 public class Local extends BaseObject {
 
-    @ManyToMany()
+  
     @Column(columnDefinition = "varchar(255) not null")
     private String descricao;
-    @ManyToMany()
+     @ManyToOne
+    @JoinColumn(name = "armazenamento_id",
+            insertable = false,
+            updatable = false)
     private Armazenamento idArmazenamento;
 
 }

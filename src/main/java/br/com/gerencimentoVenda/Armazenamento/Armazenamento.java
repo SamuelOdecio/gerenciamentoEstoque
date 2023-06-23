@@ -7,9 +7,11 @@ package br.com.gerencimentoVenda.Armazenamento;
 import br.com.gerencimentoVenda.Local.Local;
 import br.com.gerencimentoVenda.Produto.Produto;
 import br.com.gerencimentoVenda.arch.BaseObject;
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.SequenceGenerator;
 import java.util.List;
 import lombok.AllArgsConstructor;
@@ -33,10 +35,16 @@ public class Armazenamento extends BaseObject {
 
     @Column(columnDefinition = "varchar(255) not null")
     private String data;
-    @ManyToOne()
+    @OneToMany(mappedBy = "id.Armazenamento",
+            fetch = FetchType.LAZY,
+            cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST},
+            orphanRemoval = true)
     private List<Local> idLocal;
-    @ManyToOne()
-    private List<Produto> idProduto;
+    @OneToMany(mappedBy = "id.Armazenamento",
+            fetch = FetchType.LAZY,
+            cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST},
+            orphanRemoval = true)
+    private List<Produto> idProdutos;
     @Column(columnDefinition = "Integer not null")
     private int qtdeProduto;
 

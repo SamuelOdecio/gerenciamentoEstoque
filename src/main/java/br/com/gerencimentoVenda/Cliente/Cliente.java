@@ -7,7 +7,6 @@ package br.com.gerencimentoVenda.Cliente;
 import br.com.gerencimentoVenda.arch.BaseObject;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.OneToMany;
 import jakarta.persistence.SequenceGenerator;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -27,7 +26,7 @@ import lombok.experimental.SuperBuilder;
 @Entity
 @SequenceGenerator(sequenceName = "Cliente_sequence", name = "baseObjectSequence", allocationSize = 1)
 public class Cliente extends BaseObject {
-    @OneToMany(mappedBy = "Cliente")
+   
     @Column(columnDefinition = "varchar(255) not null", name = "CPF")
     private String cpf;
     @Column(columnDefinition = "varchar(255) not null")

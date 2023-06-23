@@ -19,8 +19,7 @@ import org.springframework.data.domain.Page;
  * @author nicho
  */
 @Mapper(
-        config = BaseObjectMapper.class,
-        uses = {ArmazenamentoMapper.class}
+        config = BaseObjectMapper.class
         )
 public interface ArmazenamentoMapper extends ISimpleMapper<Armazenamento, ArmazenamentoDto, ArmazenamentoForm> {
     

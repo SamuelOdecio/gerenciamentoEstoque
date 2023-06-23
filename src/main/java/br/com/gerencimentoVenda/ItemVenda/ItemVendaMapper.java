@@ -19,8 +19,7 @@ import org.springframework.data.domain.Page;
  * @author nicho
  */
 @Mapper(
-        config = BaseObjectMapper.class,
-        uses = {ItemVendaMapper.class}
+        config = BaseObjectMapper.class
         )
 public interface ItemVendaMapper extends ISimpleMapper<ItemVenda, ItemVendaDto, ItemVendaForm> {
     

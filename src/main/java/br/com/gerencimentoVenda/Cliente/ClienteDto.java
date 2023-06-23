@@ -4,7 +4,6 @@
  */
 package br.com.gerencimentoVenda.Cliente;
 
-import br.com.gerencimentoVenda.Produto.Produto;
 import br.com.gerencimentoVenda.arch.dto.AdapterBaseObjectDto;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;

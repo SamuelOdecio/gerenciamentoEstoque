@@ -5,6 +5,7 @@
 package br.com.gerencimentoVenda.Venda;
 
 import br.com.gerencimentoVenda.Cliente.Cliente;
+import br.com.gerencimentoVenda.Cliente.ClienteDto;
 import br.com.gerencimentoVenda.arch.dto.AdapterBaseObjectDto;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
@@ -23,8 +24,8 @@ import lombok.experimental.SuperBuilder;
 @EqualsAndHashCode(callSuper = true)
 public class VendaDto extends AdapterBaseObjectDto {
 
-    private Cliente cliente;
-    private Double valorFinal;
+    private ClienteDto cliente;
+    private Double valor;
     
 
 }

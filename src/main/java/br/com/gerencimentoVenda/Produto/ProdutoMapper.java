@@ -19,8 +19,7 @@ import org.springframework.data.domain.Page;
  * @author Suldine
  */
 @Mapper(
-        config = BaseObjectMapper.class,
-        uses = {ProdutoMapper.class}
+        config = BaseObjectMapper.class
         )
 public interface ProdutoMapper extends ISimpleMapper<Produto, ProdutoDto, ProdutoForm> {
     

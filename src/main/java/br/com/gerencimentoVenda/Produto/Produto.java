@@ -12,7 +12,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToMany;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.SequenceGenerator;
 import lombok.AllArgsConstructor;
@@ -34,9 +34,7 @@ import lombok.experimental.SuperBuilder;
 @SequenceGenerator(sequenceName = "Produto_sequence", name = "baseObjectSequence", allocationSize = 1)
 public class Produto extends BaseObject {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "baseObjectSequence" )
-    @OneToMany(mappedBy = "ItemVenda")
-    @JoinColumn()
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "baseObjectSequence" )   
     private Long id;    
    
     @Column(columnDefinition = "Double not null")
@@ -45,7 +43,10 @@ public class Produto extends BaseObject {
     private String marca;
     @Column(columnDefinition = "varchar(255) not null")
     private String descricao;
-    @ManyToMany()
+   @ManyToOne
+    @JoinColumn(name = "armazenamento_id",
+            insertable = false,
+            updatable = false)
     private Armazenamento idArmazenamento;
 
 

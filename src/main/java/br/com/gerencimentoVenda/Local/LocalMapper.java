@@ -19,8 +19,7 @@ import org.springframework.data.domain.Page;
  * @author nicho
  */
 @Mapper(
-        config = BaseObjectMapper.class,
-        uses = {LocalMapper.class}
+        config = BaseObjectMapper.class
         )
 public interface LocalMapper extends ISimpleMapper<Local, LocalDto, LocalForm> {
     

@@ -12,7 +12,9 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.SequenceGenerator;
 import java.util.List;
 import lombok.AllArgsConstructor;
@@ -35,8 +37,12 @@ import lombok.experimental.SuperBuilder;
 public class ItemVenda extends BaseObject {
 
     @ManyToOne(cascade = CascadeType.ALL)
-    private Venda venda; 
-    @ManyToOne()
+    private Venda venda;
+
+    @OneToMany(mappedBy = "id.ItemVenda",
+            fetch = FetchType.LAZY,
+            cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST},
+            orphanRemoval = true)
     private List<Produto> produtos;
     @Enumerated(EnumType.STRING)
     private FormaDePagamento formaDePagamento;

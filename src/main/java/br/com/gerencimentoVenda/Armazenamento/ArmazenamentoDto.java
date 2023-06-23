@@ -26,7 +26,7 @@ import lombok.experimental.SuperBuilder;
 public class ArmazenamentoDto extends AdapterBaseObjectDto {
    private String data;
     private List<Local> idLocal;
-    private List<Produto> idProduto;
+    private List<Produto> idProdutos;
     private int qtdeProduto;
     
 

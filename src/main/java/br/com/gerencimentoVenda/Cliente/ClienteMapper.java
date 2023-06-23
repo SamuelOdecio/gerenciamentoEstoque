@@ -5,11 +5,9 @@
 package br.com.gerencimentoVenda.Cliente;
 
 
-import br.com.gerencimentoVenda.arch.BaseObjectMapper;
 import br.com.gerencimentoVenda.arch.ISimpleMapper;
 import java.util.List;
 import org.mapstruct.InheritConfiguration;
-import org.mapstruct.Mapper;
 import org.mapstruct.MappingTarget;
 import org.mapstruct.factory.Mappers;
 import org.springframework.data.domain.Page;
@@ -18,10 +16,7 @@ import org.springframework.data.domain.Page;
  *
  * @author nicho
  */
-@Mapper(
-        config = BaseObjectMapper.class,
-        uses = {ClienteMapper.class}
-        )
+
 public interface ClienteMapper extends ISimpleMapper<Cliente, ClienteDto, ClienteForm> {
     
     public static final ClienteMapper INSTANCE = Mappers.getMapper(ClienteMapper.class);
