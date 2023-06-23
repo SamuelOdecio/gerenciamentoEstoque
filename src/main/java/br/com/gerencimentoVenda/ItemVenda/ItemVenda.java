@@ -35,8 +35,7 @@ import lombok.experimental.SuperBuilder;
 public class ItemVenda extends BaseObject {
 
     @ManyToOne(cascade = CascadeType.ALL)
-    private Venda venda;
-    @Column()
+    private Venda venda; 
     @ManyToOne()
     private List<Produto> produtos;
     @Enumerated(EnumType.STRING)

@@ -8,7 +8,9 @@ package br.com.gerencimentoVenda;
  *
  * @author Gabriel Suldine
  */
-public class GerenciamentoEstoque {
-
+public class GerenciamentoVenda {
+    public static void main(String[] args) {
+        
+    }
 
 }
