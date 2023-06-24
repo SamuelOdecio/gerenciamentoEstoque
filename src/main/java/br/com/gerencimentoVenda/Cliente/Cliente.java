@@ -4,11 +4,12 @@
  */
 package br.com.gerencimentoVenda.Cliente;
 
-import br.com.gerencimentoVenda.arch.BaseObject;
+import br.com.gerencimentoVenda.Venda.Venda;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
-import jakarta.persistence.SequenceGenerator;
+import java.util.List;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -25,13 +26,13 @@ import lombok.experimental.SuperBuilder;
 @NoArgsConstructor
 @EqualsAndHashCode
 @Entity
-@SequenceGenerator(sequenceName = "Cliente_sequence", name = "baseObjectSequence", allocationSize = 1)
-public class Cliente {
-//comentar erro do mapper com nicolas
+public class Cliente  {
     @Column(columnDefinition = "varchar(255) not null", name = "nome")
     private String nome;
-    @OneToMany
+    @OneToMany(mappedBy = "cliente")
+    private List<Venda> vendas;
     @Column(columnDefinition = "varchar(255) not null", name = "CPF")
+    @Id
     private String cpf;
     @Column(columnDefinition = "varchar(255) not null")
     private String telefone;

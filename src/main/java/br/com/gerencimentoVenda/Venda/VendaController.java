@@ -27,7 +27,7 @@ public class VendaController extends AbstractBasicController<Venda, VendaDto, Ve
 
     @Override
     public URI createUri(Venda entity, UriComponentsBuilder uriBuilder) {
-        return uriBuilder.path("/produto/{id}")
+        return uriBuilder.path("/venda/{id}")
                 .buildAndExpand(entity.getId())
                 .toUri();
     }

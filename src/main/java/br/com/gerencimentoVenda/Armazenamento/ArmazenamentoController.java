@@ -15,7 +15,7 @@ import org.springframework.web.util.UriComponentsBuilder;
  * @author Suldine
  */
 @RestController
-@RequestMapping("/api/local")
+@RequestMapping("/api/armazenamento")
 public class ArmazenamentoController extends AbstractBasicController<Armazenamento, ArmazenamentoDto, ArmazenamentoForm, ArmazenamentoRepository, ArmazenamentoService, Long> {
 
     @Autowired
@@ -27,7 +27,7 @@ public class ArmazenamentoController extends AbstractBasicController<Armazenamen
 
     @Override
     public URI createUri(Armazenamento entity, UriComponentsBuilder uriBuilder) {
-        return uriBuilder.path("/local/{id}")
+        return uriBuilder.path("/armazenamento/{id}")
                 .buildAndExpand(entity.getId())
                 .toUri();
     }

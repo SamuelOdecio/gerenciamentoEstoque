@@ -4,8 +4,7 @@
  */
 package br.com.gerencimentoVenda.Local;
 
-import br.com.gerencimentoVenda.Armazenamento.Armazenamento;
-import br.com.gerencimentoVenda.Produto.Produto;
+import br.com.gerencimentoVenda.Armazenamento.ArmazenamentoDto;
 import br.com.gerencimentoVenda.arch.dto.AdapterBaseObjectDto;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
@@ -25,6 +24,6 @@ import lombok.experimental.SuperBuilder;
 public class LocalDto extends AdapterBaseObjectDto {
 
     private String descricao;
-    private Armazenamento idArmazenamento;
+    private ArmazenamentoDto idArmazenamento;
 
 }

@@ -15,7 +15,7 @@ import org.springframework.web.util.UriComponentsBuilder;
  * @author Suldine
  */
 @RestController
-@RequestMapping("/api/local")
+@RequestMapping("/api/cliente")
 public class ClienteController extends AbstractBasicController<Cliente, ClienteDto, ClienteForm, ClienteRepository, ClienteService, Long> {
 
     @Autowired
@@ -27,8 +27,8 @@ public class ClienteController extends AbstractBasicController<Cliente, ClienteD
 
     @Override
     public URI createUri(Cliente entity, UriComponentsBuilder uriBuilder) {
-        return uriBuilder.path("/local/{id}")
-                .buildAndExpand(entity.getId())
+        return uriBuilder.path("/cliente/{cpf}")
+                .buildAndExpand(entity.getCpf())
                 .toUri();
     }
     

@@ -4,12 +4,13 @@
  */
 package br.com.gerencimentoVenda.ItemVenda;
 
-
+import br.com.gerencimentoVenda.Produto.ProdutoMapper;
+import br.com.gerencimentoVenda.Venda.VendaMapper;
 import br.com.gerencimentoVenda.arch.BaseObjectMapper;
 import br.com.gerencimentoVenda.arch.ISimpleMapper;
 import java.util.List;
-import org.mapstruct.InheritConfiguration;
 import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
 import org.mapstruct.MappingTarget;
 import org.mapstruct.factory.Mappers;
 import org.springframework.data.domain.Page;
@@ -19,13 +20,23 @@ import org.springframework.data.domain.Page;
  * @author nicho
  */
 @Mapper(
-        config = BaseObjectMapper.class
-        )
+        config = BaseObjectMapper.class,
+        uses = {ProdutoMapper.class,VendaMapper.class}
+)
 public interface ItemVendaMapper extends ISimpleMapper<ItemVenda, ItemVendaDto, ItemVendaForm> {
-    
+
     public static final ItemVendaMapper INSTANCE = Mappers.getMapper(ItemVendaMapper.class);
-    
-    @InheritConfiguration(name = "toEntity")
+
+    @Mapping(target = "id", expression = """
+                                         java(
+                                            ItemVendaId.builder()
+                                                    .vendaId(dto.getVenda().getId())
+                                                    .produtoId(dto.getProduto().getId())                                                    
+                                                    .build()
+                                         )
+                                         """)
+
+    @Mapping(target = "venda.itens", ignore = true)
     @Override
     public ItemVenda formToEntity(ItemVendaForm dto);
 
@@ -33,10 +44,11 @@ public interface ItemVendaMapper extends ISimpleMapper<ItemVenda, ItemVendaDto, 
     public ItemVenda dtoToEntity(ItemVendaDto dto);
 
     @Override
-    public  ItemVendaDto toDto(ItemVenda entity);
+    public ItemVendaDto toDto(ItemVenda entity);
 
-    @InheritConfiguration(name = "update")
+    @Mapping(target = "id", ignore = true)
     @Override
+
     public ItemVenda update(ItemVendaForm dto, @MappingTarget ItemVenda entity);
 
     @Override

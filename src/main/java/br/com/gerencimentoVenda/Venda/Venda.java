@@ -5,11 +5,15 @@
 package br.com.gerencimentoVenda.Venda;
 
 import br.com.gerencimentoVenda.Cliente.Cliente;
+import br.com.gerencimentoVenda.ItemVenda.ItemVenda;
 import br.com.gerencimentoVenda.arch.BaseObject;
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
-import jakarta.persistence.JoinColumn;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.SequenceGenerator;
+import java.util.List;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
@@ -27,10 +31,13 @@ import lombok.experimental.SuperBuilder;
 @SequenceGenerator(sequenceName = "Venda_sequence", name = "baseObjectSequence", allocationSize = 1)
 public class Venda extends BaseObject {
 
-    @ManyToOne
-    @JoinColumn(name = "Cliente_id",
-            insertable = false,
-            updatable = false)
-    private Cliente cliente;
-    private Double valor;
+    @ManyToOne    
+private Cliente cliente;
+    
+    @OneToMany(mappedBy = "id.vendaId",
+            fetch = FetchType.LAZY,
+            cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST},
+            orphanRemoval = true)
+      private List<ItemVenda> itens;
+    
 }

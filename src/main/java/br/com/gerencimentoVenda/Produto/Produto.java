@@ -31,10 +31,7 @@ import lombok.experimental.SuperBuilder;
 @EqualsAndHashCode(callSuper = true)
 @Entity
 @SequenceGenerator(sequenceName = "Produto_sequence", name = "baseObjectSequence", allocationSize = 1)
-public class Produto extends BaseObject {
-    @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "baseObjectSequence" )   
-    private Long id;    
+public class Produto extends BaseObject {    
    
     @Column(columnDefinition = "Double not null")
     private Double preco;

@@ -4,29 +4,27 @@
  */
 package br.com.gerencimentoVenda.ItemVenda;
 
-import br.com.gerencimentoVenda.Produto.Produto;
-import br.com.gerencimentoVenda.Venda.Venda;
-import br.com.gerencimentoVenda.arch.dto.AdapterBaseObjectDto;
-import java.util.List;
+import br.com.gerencimentoVenda.Produto.ProdutoDto;
+import br.com.gerencimentoVenda.Venda.VendaDto;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.experimental.SuperBuilder;
 
 /**
  *
- * @author nicho
+ * @author suldine
  */
 @Getter
-@SuperBuilder
+@Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@EqualsAndHashCode(callSuper = true)
-public class ItemVendaDto extends AdapterBaseObjectDto {
-
-    private Venda venda;
-    private List<Produto> produtos;
-    private FormaDePagamento formaDePagamento;
+@EqualsAndHashCode
+public class ItemVendaDto {
+   
+    private VendaDto venda;
+    private ProdutoDto produto;
+   
 
 }

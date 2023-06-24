@@ -5,7 +5,9 @@
 package br.com.gerencimentoVenda.Venda;
 
 import br.com.gerencimentoVenda.Cliente.ClienteDto;
+import br.com.gerencimentoVenda.ItemVenda.ItemVendaDto;
 import br.com.gerencimentoVenda.arch.dto.AdapterBaseObjectDto;
+import java.util.List;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -24,7 +26,8 @@ import lombok.experimental.SuperBuilder;
 public class VendaDto extends AdapterBaseObjectDto {
 
     private ClienteDto cliente;
-    private Double valor;
+    private List<ItemVendaDto> itens;
+  
     
 
 }

@@ -4,7 +4,7 @@
  */
 package br.com.gerencimentoVenda.Local;
 
-import br.com.gerencimentoVenda.Armazenamento.Armazenamento;
+import br.com.gerencimentoVenda.Armazenamento.ArmazenamentoDto;
 import br.com.gerencimentoVenda.arch.dto.AdapterBaseObjectForm;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -24,6 +24,6 @@ import lombok.experimental.SuperBuilder;
 public class LocalForm extends AdapterBaseObjectForm {
 
     private String descricao;
-    private Armazenamento idArmazenamento;
+    private ArmazenamentoDto idArmazenamento;
 
 }

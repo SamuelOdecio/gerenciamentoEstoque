@@ -28,7 +28,7 @@ public class ArmazenamentoForm extends AdapterBaseObjectForm {
     
     private String data;
     private List <Local> idLocal;
-    private List <Produto> idProdutos;
+    private List <Produto> produtos;
     private int qtdeProduto;
     
 }

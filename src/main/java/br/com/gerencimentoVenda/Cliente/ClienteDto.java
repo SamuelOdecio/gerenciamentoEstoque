@@ -4,24 +4,26 @@
  */
 package br.com.gerencimentoVenda.Cliente;
 
-import br.com.gerencimentoVenda.arch.dto.AdapterBaseObjectDto;
+import br.com.gerencimentoVenda.Venda.VendaDto;
+import java.util.List;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.experimental.SuperBuilder;
 
 /**
  *
  * @author Suldine
  */
 @Getter
-@SuperBuilder
+@Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@EqualsAndHashCode(callSuper = true)
-public class ClienteDto extends AdapterBaseObjectDto {
-    
+@EqualsAndHashCode
+public class ClienteDto  {
+    private String nome;
+    private List<VendaDto> vendas;
     private String cpf;
     private String telefone;
     private String endereco;

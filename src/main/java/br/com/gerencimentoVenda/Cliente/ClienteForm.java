@@ -5,25 +5,26 @@
 package br.com.gerencimentoVenda.Cliente;
 
 
-import br.com.gerencimentoVenda.Produto.Produto;
-import br.com.gerencimentoVenda.arch.dto.AdapterBaseObjectForm;
+import br.com.gerencimentoVenda.Venda.VendaDto;
+import java.util.List;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-import lombok.experimental.SuperBuilder;
 
 /**
  *
  * @author Suldine
  */
 @Data
-@SuperBuilder
+@Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@EqualsAndHashCode(callSuper = true)
-public class ClienteForm extends AdapterBaseObjectForm {
-    
+@EqualsAndHashCode
+public class ClienteForm  {
+    private String nome;
+    private List<VendaDto> vendas;
     private String cpf;
     private String telefone;
     private String endereco;

@@ -4,13 +4,11 @@
  */
 package br.com.gerencimentoVenda.ItemVenda;
 
-import br.com.gerencimentoVenda.Produto.ProdutoDto;
-import br.com.gerencimentoVenda.Venda.VendaDto;
-import lombok.AllArgsConstructor;
+import jakarta.persistence.Column;
+import jakarta.persistence.Embeddable;
 import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
 
 /**
  *
@@ -18,13 +16,15 @@ import lombok.NoArgsConstructor;
  */
 @Data
 @Builder
-@AllArgsConstructor
-@NoArgsConstructor
 @EqualsAndHashCode
-public class ItemVendaForm  {
+@Embeddable
+public class ItemVendaId {
     
-    private VendaDto venda;
-    private ProdutoDto produto;
-   
+    private ItemVendaId id;
+    @Column(name = "venda_id")
+    private Long vendaId;
+
+    @Column(name = "produto_id")
+    private Long produtoId;
 
 }

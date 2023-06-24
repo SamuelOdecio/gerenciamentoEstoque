@@ -12,7 +12,7 @@ import org.springframework.web.util.UriComponentsBuilder;
 
 /**
  *
- * @author nicho
+ * @author suldine
  */
 @RestController
 @RequestMapping("/api/itemVenda")
