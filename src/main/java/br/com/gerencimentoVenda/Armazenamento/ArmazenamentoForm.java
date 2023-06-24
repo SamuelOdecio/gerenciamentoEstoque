@@ -5,8 +5,8 @@
 package br.com.gerencimentoVenda.Armazenamento;
 
 
-import br.com.gerencimentoVenda.Local.Local;
-import br.com.gerencimentoVenda.Produto.Produto;
+import br.com.gerencimentoVenda.Local.LocalDto;
+import br.com.gerencimentoVenda.Produto.ProdutoDto;
 import br.com.gerencimentoVenda.arch.dto.AdapterBaseObjectForm;
 import java.util.List;
 import lombok.AllArgsConstructor;
@@ -27,8 +27,8 @@ import lombok.experimental.SuperBuilder;
 public class ArmazenamentoForm extends AdapterBaseObjectForm {
     
     private String data;
-    private List <Local> idLocal;
-    private List <Produto> produtos;
+    private List <LocalDto> idLocal;
+    private List <ProdutoDto> produtos;
     private int qtdeProduto;
     
 }

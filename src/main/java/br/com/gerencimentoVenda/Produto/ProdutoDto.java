@@ -4,7 +4,7 @@
  */
 package br.com.gerencimentoVenda.Produto;
 
-import br.com.gerencimentoVenda.Armazenamento.Armazenamento;
+import br.com.gerencimentoVenda.Armazenamento.ArmazenamentoDto;
 import br.com.gerencimentoVenda.arch.dto.AdapterBaseObjectDto;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
@@ -29,6 +29,6 @@ public class ProdutoDto extends AdapterBaseObjectDto {
 
     private String descricao;
 
-    private Armazenamento idArmazenamento;
+    private ArmazenamentoDto idArmazenamento;
 
 }

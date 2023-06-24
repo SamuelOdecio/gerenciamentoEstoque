@@ -5,7 +5,7 @@
 package br.com.gerencimentoVenda.Produto;
 
 
-import br.com.gerencimentoVenda.Armazenamento.Armazenamento;
+import br.com.gerencimentoVenda.Armazenamento.ArmazenamentoDto;
 import br.com.gerencimentoVenda.arch.dto.AdapterBaseObjectForm;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -29,5 +29,5 @@ private Double preco;
 
     private String descricao;
 
-    private Armazenamento idArmazenamento;
+    private ArmazenamentoDto idArmazenamento;
 }

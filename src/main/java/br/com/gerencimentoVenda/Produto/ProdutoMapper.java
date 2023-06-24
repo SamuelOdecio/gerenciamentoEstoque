@@ -4,12 +4,13 @@
  */
 package br.com.gerencimentoVenda.Produto;
 
-
+import br.com.gerencimentoVenda.Armazenamento.Armazenamento;
 import br.com.gerencimentoVenda.arch.BaseObjectMapper;
 import br.com.gerencimentoVenda.arch.ISimpleMapper;
 import java.util.List;
 import org.mapstruct.InheritConfiguration;
 import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
 import org.mapstruct.MappingTarget;
 import org.mapstruct.factory.Mappers;
 import org.springframework.data.domain.Page;
@@ -19,21 +20,23 @@ import org.springframework.data.domain.Page;
  * @author Suldine
  */
 @Mapper(
-        config = BaseObjectMapper.class
-        )
+        config = BaseObjectMapper.class,
+        uses = {Armazenamento.class}
+)
 public interface ProdutoMapper extends ISimpleMapper<Produto, ProdutoDto, ProdutoForm> {
-    
+
     public static final ProdutoMapper INSTANCE = Mappers.getMapper(ProdutoMapper.class);
-    
+
     @InheritConfiguration(name = "toEntity")
     @Override
+    @Mapping(target = "idArmazenamento.idLocal", ignore = true)
     public Produto formToEntity(ProdutoForm dto);
 
     @Override
     public Produto dtoToEntity(ProdutoDto dto);
 
     @Override
-    public  ProdutoDto toDto(Produto entity);
+    public ProdutoDto toDto(Produto entity);
 
     @InheritConfiguration(name = "update")
     @Override

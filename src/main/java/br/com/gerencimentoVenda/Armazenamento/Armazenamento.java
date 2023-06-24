@@ -35,15 +35,17 @@ public class Armazenamento extends BaseObject {
 
     @Column(columnDefinition = "varchar(255) not null")
     private String data;
+    
     @OneToMany(mappedBy = "id.Armazenamento",
             fetch = FetchType.LAZY,
             cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST},
             orphanRemoval = true)
     private List<Local> idLocal;
+    
     @OneToMany(mappedBy = "id.Armazenamento",
             fetch = FetchType.LAZY,
             cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST},
-            orphanRemoval = true)
+            orphanRemoval = true)    
     private List<Produto> produtos;
     @Column(columnDefinition = "Integer not null")
     private int qtdeProduto;
